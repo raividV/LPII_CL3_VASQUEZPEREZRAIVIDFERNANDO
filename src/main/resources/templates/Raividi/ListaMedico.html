@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Lista Medicos</title>
+    <style>
+        html {
+            background-color: rgb(128, 128, 192);
+        }
+    </style>
+</head>
+<body>
+	<h1 align="center">LISTADO MEDICO</h1>
+	<h2 align="center">
+		<a th:href="@{RegistroMedico}" th:text="'nuevo registro'" 
+		title="crear un nuevo registro">
+
+		</a>
+	</h2>
+	<table align="center" border="2">
+		<tr>
+			            <th>Codigo</th>
+			            <th>Nombre</th>
+			            <th>Apellido</th>
+			            <th>Email</th>
+			            <th>Dni</th>
+			            <th>Estado Civil</th>
+			            <th>Fecha Nacimiento</th>
+		</tr>
+		<th:block th:each="p : ${listado}">
+			<tr>
+				<td th:text="${p.IDMEDICOCL3}"></td>
+				     <td th:text="${p.NOMBRECL3}"></td>
+				     <td th:text="${p.APELLIDOCL3}"></td>
+				     <td th:text="${p.EMAIL}"></td>
+				     <td th:text="${p.DNICL3}"></td>
+				     <td th:text="${p.ESTADOCIVILCL3}"></td>
+				     <td th:text="${p.FECHANACIMCL3}"></td>
+			</tr>
+		</th:block>
+
+	</table>
+
+</body>
+
+</html>
